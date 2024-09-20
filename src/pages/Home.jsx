@@ -101,7 +101,7 @@ const Home = () => {
 
           {/* Mobile cards */}
           <div className="absolute lg:hidden w-full p-2 pt-16" style={{ top: '50px', left: '' }}>
-            <div className='h-28 mx-8 w-[350px]'>
+            <div className='h-28 mx-8 w-[340px]'>
               <img src={back} alt='back card' />
               <h2 className='absolute text-black text-1xl bottom-48 right-10 '>{cvc || '000'}</h2> {/* Dynamic CVC */}
             </div>
