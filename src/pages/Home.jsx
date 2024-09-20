@@ -124,7 +124,7 @@ const Home = () => {
         </div>
 
         {/* Right section: Form */}
-        <div className='lg:my-56 my-72 px-8 lg:w-full '>
+        <div className='lg:my-56 my-72 px-6 lg:w-full '>
           {!isSubmitted ? (
             <form onSubmit={handleSubmit}>
               <div className='items-center justify-center'>
