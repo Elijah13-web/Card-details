@@ -68,12 +68,12 @@ const Home = () => {
   };
 
   return (
-    <div className=''>
+    <div className=' overflow-hidden'>
       <div className="flex flex-col lg:grid lg:grid-cols-2 gap-40">
         {/* Left section: Card display */}
-        <div className="">
+        <div className=" h-full">
           <div className="absolute">
-            <img src={desktop} alt='background' className='max-h-[775px] w-[500px] hidden lg:block'/>
+            <img src={desktop} alt='background' className='h-[750px] w-[500px] hidden lg:block'/>
             <img src={mobile} alt='mobile' className='lg:hidden w-[500px] h-[350px]'/>
           </div>
           
@@ -124,14 +124,14 @@ const Home = () => {
         </div>
 
         {/* Right section: Form */}
-        <div className='lg:my-56 my-72 px-6 lg:w-full '>
+        <div className='lg:py-44 my-72 px-6 lg:w-full '>
           {!isSubmitted ? (
             <form onSubmit={handleSubmit}>
               <div className='items-center justify-center'>
                 <h1 className='font-mono'>CARDHOLDER NAME</h1>
                 <input
                   type="text"
-                  className='py-1 pl-2 w-80 my-2 border rounded-lg'
+                  className='py-1 pl-2 w-80 my-2 border rounded-lg '
                   placeholder='e.g. Jane Appleseed'
                   value={cardholderName}
                   onChange={(e) => setCardholderName(e.target.value)}
@@ -160,19 +160,21 @@ const Home = () => {
                       type="text"
                       inputMode="numeric"
                       placeholder='MM'
+                      minLength={2}
                       maxLength={2}
                       value={expMonth}
                       onChange={(e) => setExpMonth(e.target.value)}
-                      className='border rounded-lg p-1 px-3 w-16'
+                      className='border rounded-lg p-1 px-3 w-16 z-20'
                     />
                     <input
                       type="text"
                       inputMode="numeric"
                       placeholder='YY'
+                      minLength={2}
                       maxLength={2}
                       value={expYear}
                       onChange={(e) => setExpYear(e.target.value)}
-                      className='border rounded-lg p-1 px-3 w-16'
+                      className='border rounded-lg p-1 px-3 w-16 z-20'
                     />
                   </div>
                   {errors.expMonth && <p className='text-red-500 text-sm'>{errors.expMonth}</p>}
