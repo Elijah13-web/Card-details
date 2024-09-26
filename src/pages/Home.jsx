@@ -69,11 +69,11 @@ const Home = () => {
 
   return (
     <div className=' overflow-hidden'>
-      <div className="flex flex-col lg:grid lg:grid-cols-2 gap-40">
+      <div className="grid lg:grid-cols-2 gap-40">
         {/* Left section: Card display */}
         <div className=" h-full">
           <div className="absolute">
-            <img src={desktop} alt='background' className='h-[750px] w-[500px] hidden lg:block'/>
+            <img src={desktop} alt='background' className='h-[775px] w-[500px] hidden lg:block'/>
             <img src={mobile} alt='mobile' className='lg:hidden w-[500px] h-[350px]'/>
           </div>
           
@@ -124,7 +124,7 @@ const Home = () => {
         </div>
 
         {/* Right section: Form */}
-        <div className='lg:py-44 my-72 px-6 lg:w-full '>
+        <div className='lg:mt-56 mt-72 mx-auto  '>
           {!isSubmitted ? (
             <form onSubmit={handleSubmit}>
               <div className='items-center justify-center'>
