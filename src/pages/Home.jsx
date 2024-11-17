@@ -73,8 +73,12 @@ const Home = () => {
         {/* Left section: Card display */}
         <div className=" h-full">
           <div className="absolute">
-            <img src={desktop} alt='background' className='h-[775px] w-[500px] hidden lg:block'/>
-            <img src={mobile} alt='mobile' className='lg:hidden w-[500px] h-[350px]'/>
+          <img 
+  src={desktop} 
+  alt='background' 
+  className='hidden lg:block w-[500px]  xl:h-[860px]' 
+/>
+            <img src={mobile} alt='mobile' className='lg:hidden w-[500px] md:w-[900px] h-[350px]'/>
           </div>
           
           {/* Front card */}
@@ -88,39 +92,56 @@ const Home = () => {
                 {cardNumber || '0000 0000 0000 0000'} {/* Dynamic card number */}
               </div>
               <div className="flex justify-between space-x-48">
-                <div className="text-1xl">{cardholderName || 'JANE APPLESEED'}</div> {/* Dynamic cardholder name */}
-                <div className="text-1xl">{(expMonth || '00') + '/' + (expYear || '00')}</div> {/* Dynamic expiration date */}
+                <div className="text-1xl">{cardholderName || 'JANE APPLESEED'}</div>
+                <div className="text-1xl">{(expMonth || '00') + '/' + (expYear || '00')}</div>
               </div>
             </div>
             {/* Back card */}
             <div className='py-8 px-20 relative w-[500px] lg:w-[800px]'>
               <img src={back} alt='back card' />
-              <h2 className='absolute text-black text-1xl top-28 right-80 py-6 px-3'>{cvc || '000'}</h2> {/* Dynamic CVC */}
+              <h2 className='absolute text-black text-1xl top-28 right-80 py-6 px-3'>{cvc || '000'}</h2> 
             </div>
           </div>
 
           {/* Mobile cards */}
-          <div className="absolute lg:hidden w-full p-2 pt-16" style={{ top: '50px', left: '' }}>
-            <div className='h-28 py-2 mx-10 w-[340px]'>
-              <img src={back} alt='back card' />
-              <h2 className='absolute text-black text-1xl bottom-48 right-10 '>{cvc || '000'}</h2> {/* Dynamic CVC */}
-            </div>
-            <div className='w-[330px] '>
-              <div>
-                <img src={front} alt='card' />
-                <img src={logo} alt='logo' className='absolute top-48 left-6 w-[80px]'/>
-              </div>
-              <div className="absolute top-64 left-7 text-white">
-                <div className="text-2xl tracking-widest pt-3">
-                  {cardNumber || '0000 0000 0000 0000'} {/* Dynamic card number */}
-                </div>
-                <div className="flex justify-between pt-5">
-                  <div className="text-1xl">{cardholderName || 'JANE APPLESEED'}</div> {/* Dynamic cardholder name */}
-                  <div className="text-1xl">{(expMonth || '00') + '/' + (expYear || '00')}</div> {/* Dynamic expiration date */}
-                </div>
-              </div>
-            </div>
-          </div>
+          <div
+  className="absolute w-full p-2 pt-16 lg:hidden"
+  style={{ top: '50px' }}
+>
+  {/* Back Card */}
+  <div className="relative h-28 mx-auto py-1 w-[90%] max-w-[330px]">
+    <img src={back} alt="back card" className="w-full" />
+    <h2 className="absolute text-black text-xl bottom-1.5 right-9">
+      {cvc || '000'}
+    </h2>
+  </div>
+
+  {/* Front Card */}
+  <div className="relative mx w-[90%] max-w-[330px]">
+    <div>
+      <img src={front} alt="card" className="w-full" />
+      <img
+        src={logo}
+        alt="logo"
+        className="absolute top-[10%] left-4 w-[20%]"
+      />
+    </div>
+    <div className="absolute top-[60%] left-4 text-white">
+      <div className="text-2xl tracking-widest ">
+        {cardNumber || '0000 0000 0000 0000'}
+      </div>
+      <div className="flex justify-between pt-3 tracking-widest space-x-28">
+        <div className="text-sm">
+          {cardholderName || 'JANE APPLESEED'}
+        </div>
+        <div className="text-sm">
+          {(expMonth || '00') + '/' + (expYear || '00')}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
         </div>
 
         {/* Right section: Form */}
